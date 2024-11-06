@@ -1,5 +1,6 @@
- /* Redefinir margens e preenchimento */
- * {
+<style>
+/* Reset de margens e preenchimento */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,60 +13,73 @@ body {
     color: #333;
 }
 
+/* Cabeçalho */
 header {
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
+    padding: 15px;
     text-align: center;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    color: #ddd;
 }
 
-section {
-    padding: 20px;
-    margin: 20px 0;
-}
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
+/* Hero */
 .hero {
     background: url(./Assets/image/WhatsApp\ Image\ 2024-11-06\ at\ 12.16.46.jpeg) no-repeat center center/cover;
     height: 400px;
     color: #fff;
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    padding: 20px;
 }
 
 .hero h1 {
     font-size: 3em;
 }
 
+/* Seções e Container */
+section {
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+/* Serviços e Contato */
 .servicos, .contato {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .servico-item, .contato-info {
@@ -73,12 +87,77 @@ section {
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 45%;
+    flex: 1 1 300px;
+    max-width: 45%;
+    text-align: center;
+    transition: transform 0.3s;
 }
 
+.servico-item:hover, .contato-info:hover {
+    transform: translateY(-5px);
+}
+
+/* Contato */
+.contato-info a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contato-info a:hover {
+    color: #555;
+    text-decoration: underline;
+}
+
+/* Rodapé */
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 10px 0;
+    font-size: 0.9em;
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .servicos, .contato {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .servico-item, .contato-info {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 250px;
+    }
+
+    .hero h1 {
+        font-size: 1.5em;
+    }
+
+    section {
+        padding: 20px 10px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+}
+</style>
